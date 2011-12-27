@@ -15,6 +15,10 @@ A jQuery plugin to split a list, passing the number of slices as argument. Good 
 
 ###Usage
 
+```javascript
+$(selector).listSplit(slices[,invert]);
+```
+
 Using the following HTML:
 
 ```html
