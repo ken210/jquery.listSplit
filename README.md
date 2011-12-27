@@ -15,7 +15,7 @@ A jQuery plugin to split a list, passing the number of slices as argument. Good 
 
 ###Usage
 
-Consider the following markup:
+Using the following HTML:
 
 ```html
 <ul class="cities">
@@ -57,12 +57,13 @@ Consider the following markup:
 </dl>
 ```
 
-And the following scripts and respective returns
+The first list can be splited in two:
 
 ```javascript
 $('ul').listSplit(2);
 ```
-returns:
+
+Now we have a `<div>` with two lists and got a brand new class that inform the number of slices
 
 ```html
 <div class="cities split-2">
@@ -79,15 +80,13 @@ returns:
 </div>
 ```
 
-It puts the number of slices on the containers class, like `split-2`
-
-
+The second list will be splited in three:
 
 ```javascript
 $('ol').listSplit(3);
 ```
 
-returns:
+On ordered lists, the `start` attributte is added to the lists:
 
 ```html
 <div class="split-3">
@@ -111,15 +110,13 @@ returns:
 </div>
 ```
 
-On ordered lists, the `start` attributte is added to the lists
-
-
+The code works also on direct lists:
 
 ```javascript
 $('dl').listSplit(2);
 ```
 
-returns:
+You dont loose any of your attributes:
 
 ```html
 <div style="color: red" class="profile split-2">

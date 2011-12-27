@@ -26,7 +26,8 @@
 	$.fn.listSplit = function (slices, invert) {
 		
 		var containers = [],
-			callback = arguments[arguments - 1];
+			callback = arguments[arguments.length - 1],
+			args = arguments;
 		
 		this.each(function () {
 			
@@ -44,6 +45,8 @@
 				sliceSize;
 				
 			slices = slices || 2;
+			invert = typeof invert === 'function' && false;
+			
 			
 			if (elemTag.match(/d|o|ul/) && slices > 1 /*&& slices <= itensLeft / 2*/) {
 				
@@ -68,11 +71,11 @@
 					start += 1;
 					i += 1;
 				}
-				
+
 				$.each(elemAttr, function () {
 					container.attr(this.name, this.value); // restore elem attributes
 				});
-				
+
 				container.addClass('split-' + i);
 				
 				elem.replaceWith(container); // replace splited lists
@@ -82,7 +85,7 @@
 		});
 		
 		if (typeof callback === 'function') {
-			callback();
+			callback($(containers));
 		}
 		
 		return $(containers); // return jQuery container
