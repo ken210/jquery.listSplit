@@ -11,7 +11,7 @@
  * Got some side effects on nested lists
  * 
  * Author: Ken Rosaka (ken210.com / @ken_rosaka)
- * Version: 0.3
+ * Version: 0.4
  * Created: 2011-07-01
  * Release: ?
  * Last update: 2011-12-27
@@ -68,6 +68,10 @@
 					start += 1;
 					i += 1;
 				}
+				
+				$.each(elemAttr, function () {
+					container.attr(this.name, this.value); // restore elem attributes
+				});
 				
 				container.addClass('split-' + i);
 				
