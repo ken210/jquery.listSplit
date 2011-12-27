@@ -63,6 +63,7 @@ And the following scripts and respective returns
 $('ul').listSplit(2);
 ```
 returns:
+
 ```html
 <div class="cities split-2">
 	<ul>
@@ -77,6 +78,7 @@ returns:
 	</ul>
 </div>
 ```
+
 It puts the number of slices on the containers class, like `split-2`
 
 
@@ -84,7 +86,9 @@ It puts the number of slices on the containers class, like `split-2`
 ```javascript
 $('ol').listSplit(3);
 ```
+
 returns:
+
 ```html
 <div class="split-3">
 	<ol>
@@ -106,6 +110,7 @@ returns:
 	</ol>
 </div>
 ```
+
 On ordered lists, the `start` attributte is added to the lists
 
 
@@ -113,7 +118,9 @@ On ordered lists, the `start` attributte is added to the lists
 ```javascript
 $('dl').listSplit(2);
 ```
+
 returns:
+
 ```html
 <div style="color: red" class="profile split-2">
 	<dl>
@@ -135,14 +142,18 @@ returns:
 	</dl>
 </div>
 ```
+
 If the number of itens are not divisible by the argument passed, the plugin rounds up the first lists.
 This behavior can be inverted, passing a second argument `true`
 
 Like this:
+
 ```javascript
 $('dl').listSplit(2, true);
 ```
+
 returns:
+
 ```html
 <div style="color: red" class="profile split-2">
 	<dl>
