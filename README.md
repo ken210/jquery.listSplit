@@ -19,6 +19,12 @@ A jQuery plugin to split a list, passing the number of slices as argument. Good 
 $(selector).listSplit(slices[,invert]);
 ```
 
+Return:
+
+A jQuery object with the container of the new lists (`<div>`)
+
+###Examples
+
 Using the following HTML:
 
 ```html
@@ -174,5 +180,34 @@ returns:
 		<dt>Country:</dt>
 		<dd>Brazil</dd>
 	</dl>
+</div>
+```
+
+###Usign chainability
+
+The plugin will always return the container of the lists (`<div>`).
+
+Put a title before each new list
+
+```javascript
+$('ul').listSplit(2).find('ul').before('<h3>Some title</h3>');
+```
+
+Returns
+
+```html
+<div class="cities split-2">
+	<h2>Some title</h2>
+	<ul>
+		<li>New York</li>
+		<li>London</li>
+		<li>Tokyo</li>
+	</ul>
+	<h2>Some title</h2>
+	<ul>
+		<li>São Paulo</li>
+		<li>Paris</li>
+		<li>Toronto</li>
+	</ul>
 </div>
 ```
